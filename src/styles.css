@@ -9,6 +9,11 @@ html, body {
     height: 100vh;
 }
 
+.box-shadow {
+    box-shadow: 0 0 20px 0px #878787;
+}
+
+
 /* FABS */
 
 .fab {

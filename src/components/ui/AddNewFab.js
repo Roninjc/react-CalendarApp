@@ -13,7 +13,7 @@ export const AddNewFab = () => {
 
     return (
         <button
-            className="btn btn-primary fab"
+            className="btn btn-primary fab box-shadow"
             onClick={ handleClick }
         >
             <i className="fas fa-plus"></i>

@@ -39,14 +39,26 @@ export const CalendarScreen = () => {
     const { initEvent: formValues } = useSelector(state => state.form);
 
     const [lastView, setLastView] = useState( localStorage.getItem('lastView') || 'month' );
-    const [slot, setSlot] = useState("");
+    // const [slot, setSlot] = useState("");
 
     const onDoubleClickEvent = (e) => {
         dispatch( uiOpenModal() );
     }
 
-    const onSelect = (e) => {
+    const onSelectEvent = (e) => {
         dispatch( eventSetActive(e) );
+    }
+
+    const onSelecting = (e) => {
+        // TODO: open modal with selected start and end.
+        // console.log(e);
+        // dispatch( formSetValues({
+        //     ...formValues,
+        //     start: e.start,
+        //     end: e.end
+        // }));
+        // alert('Aqui estamos');
+        // dispatch( uiOpenModal() );
     }
 
     const onViewChange = (e) => {
@@ -56,16 +68,13 @@ export const CalendarScreen = () => {
 
     const onSelectSlot = (e) => {
         dispatch( eventClearActiveEvent() );
-        setSlot(e);
-        console.log(e);
+        // setSlot(e);
         if ( e.action === 'doubleClick' ) {
             dispatch( formSetValues({
                 ...formValues,
                 start: e.start,
                 end: e.end
             }));
-            console.log(e.start);
-            console.log(e.end);
             dispatch( uiOpenModal() );
         }
     }
@@ -97,8 +106,9 @@ export const CalendarScreen = () => {
                 messages={ messages }
                 eventPropGetter={ eventStyleGetter }
                 onDoubleClickEvent={ onDoubleClickEvent }
-                onSelectEvent={ onSelect }
+                onSelectEvent={ onSelectEvent }
                 onSelectSlot={ onSelectSlot }
+                onSelecting={ onSelecting }
                 selectable={ true }
                 onView={ onViewChange }
                 view={ lastView }
@@ -106,8 +116,6 @@ export const CalendarScreen = () => {
                     event: CalendarEvent
                 }}
             />
-
-            <div>{JSON.stringify(slot)}</div>
 
             <AddNewFab />
             {

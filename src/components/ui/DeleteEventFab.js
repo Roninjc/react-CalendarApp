@@ -13,7 +13,7 @@ export const DeleteEventFab = () => {
 
     return (
         <button
-            className="btn btn-danger fab-danger"
+            className="btn btn-danger fab-danger box-shadow"
             onClick={ handleDelete }
         >
             <i className="fas fa-trash"></i>

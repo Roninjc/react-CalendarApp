@@ -10,6 +10,7 @@ import { eventAddNew, eventClearActiveEvent, eventUpdated } from '../../actions/
 import { formClearValues, formSetValues } from '../../actions/form';
 
 import './modal.css';
+import '../../styles.css';
 
 const customStyles = {
     content: {
@@ -23,8 +24,8 @@ const customStyles = {
 };
 Modal.setAppElement('#root');
 
-const now = moment().minutes(0).seconds(0).add(1, 'hours');
-const nowPlus1 = now.clone().add(1, 'hours');
+// const now = moment().minutes(0).seconds(0).add(1, 'hours');
+// const nowPlus1 = now.clone().add(1, 'hours');
 
 // const initEvent = {
 //     title: 'Udefinert',
@@ -41,8 +42,8 @@ export const CalendarModal = () => {
     const { activeEvent } = useSelector(state => state.calendar);
     const { initEvent: formValues } = useSelector(state => state.form);
 
-    const [dateStart, setDateStart] = useState( now.toDate() );
-    const [dateEnd, setDateEnd] = useState( nowPlus1.toDate() );
+    // const [dateStart, setDateStart] = useState( now.toDate() );
+    // const [dateEnd, setDateEnd] = useState( nowPlus1.toDate() );
     const [titleValid, setTitleValid] = useState(true);
 
     // const [formValues, setFormValues] = useState( initEvent );
@@ -80,7 +81,7 @@ export const CalendarModal = () => {
     }
 
     const hanldeStartDateChange = (e) => {
-        setDateStart( e );
+        // setDateStart( e );
         // setFormValues({
         //     ...formValues,
         //     start: e
@@ -92,7 +93,7 @@ export const CalendarModal = () => {
     }
 
     const hanldeEndDateChange = (e) => {
-        setDateEnd( e );
+        // setDateEnd( e );
         // setFormValues({
         //     ...formValues,
         //     end: e
@@ -142,7 +143,7 @@ export const CalendarModal = () => {
             onRequestClose={closeModal}
             style={ customStyles }
             closeTimeoutMS={ 200 }
-            className="modal"
+            className="modal backdrop box-shadow"
             overlayClassName="modal-fondo"
         >
 
@@ -158,7 +159,7 @@ export const CalendarModal = () => {
                     <DateTimePicker
                         onChange={ hanldeStartDateChange }
                         value={ start }
-                        className="form-control"
+                        className="form-control backdrop"
                     />
                 </div>
 
@@ -167,8 +168,8 @@ export const CalendarModal = () => {
                     <DateTimePicker
                         onChange={ hanldeEndDateChange }
                         value={ end }
-                        minDate={ dateStart }
-                        className="form-control"
+                        minDate={ start }
+                        className="form-control backdrop"
                     />
                 </div>
 
@@ -177,7 +178,7 @@ export const CalendarModal = () => {
                     <label>Tittel og notater</label>
                     <input 
                         type="text" 
-                        className={`form-control ${ !titleValid && 'is-invalid' }`}
+                        className={`form-control backdrop ${ !titleValid && 'is-invalid' }`}
                         placeholder="Hendelsestittel"
                         name="title"
                         autoComplete="off"
@@ -190,7 +191,7 @@ export const CalendarModal = () => {
                 <div className="form-group">
                     <textarea 
                         type="text" 
-                        className="form-control"
+                        className="form-control backdrop"
                         placeholder="Notater"
                         rows="5"
                         name="notes"

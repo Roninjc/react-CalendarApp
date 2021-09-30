@@ -17,17 +17,32 @@ html, body {
 /* FABS */
 
 .fab {
+    /* backdrop-filter: blur(5px); */
+    /* background-color: #114fbb; */
     border-radius: 100%;
     bottom: 25px;
     font-size: 30px;
-    padding: 25px;
+    padding: 15px;
     position: fixed;
     right: 25px;
 }
 
+.fab:focus {
+    box-shadow: 0 0 20px 4px #878787;
+}
+
 .fab-danger {
+    /* backdrop-filter: blur(5px); */
+    /* background-color: #b10000; */
     bottom: 25px;
+    color: white;
+    left: 25px;
     padding: 10px;
     position: fixed;
-    left: 25px;
+}
+
+.fab-danger:focus {
+    box-shadow: 0 0 20px 4px #878787;
+    background-color: #b10000;
+    border-color: #b10000;
 }

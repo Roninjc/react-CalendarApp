@@ -159,7 +159,7 @@ export const CalendarModal = () => {
                     <DateTimePicker
                         onChange={ hanldeStartDateChange }
                         value={ start }
-                        className="form-control backdrop"
+                        className="form-control"
                     />
                 </div>
 
@@ -169,7 +169,7 @@ export const CalendarModal = () => {
                         onChange={ hanldeEndDateChange }
                         value={ end }
                         minDate={ start }
-                        className="form-control backdrop"
+                        className="form-control"
                     />
                 </div>
 
@@ -178,7 +178,7 @@ export const CalendarModal = () => {
                     <label>Tittel og notater</label>
                     <input 
                         type="text" 
-                        className={`form-control backdrop ${ !titleValid && 'is-invalid' }`}
+                        className={`form-control transparent ${ !titleValid && 'is-invalid' }`}
                         placeholder="Hendelsestittel"
                         name="title"
                         autoComplete="off"
@@ -191,7 +191,7 @@ export const CalendarModal = () => {
                 <div className="form-group">
                     <textarea 
                         type="text" 
-                        className="form-control backdrop"
+                        className="form-control transparent"
                         placeholder="Notater"
                         rows="5"
                         name="notes"

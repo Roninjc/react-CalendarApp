@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import { fetchConToken, fetchSinToken } from '../helpers/fetch';
 import { types } from '../types/types';
 import { formClearValues } from './form';
-import { eventClearActiveEvent, eventLogout } from './events';
+import { eventLogout } from './events';
 
 
 export const startLogin = ( email, password ) => {
@@ -49,6 +49,13 @@ export const startRegister = ( name, email, password ) => {
 
 export const startChecking = () => {
     return async( dispatch ) => {
+        
+        const isCurrentToken = !!(localStorage.getItem('token') || '');
+ 
+        if (!isCurrentToken){
+            dispatch( checkingFinish() ); 
+            return;
+        }
 
         const resp = await fetchConToken( 'auth/renew' );
         const body = await resp.json();

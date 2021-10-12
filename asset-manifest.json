@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-CalendarApp/static/css/main.27c5fd10.chunk.css",
+    "main.js": "/react-CalendarApp/static/js/main.e1b19a00.chunk.js",
+    "main.js.map": "/react-CalendarApp/static/js/main.e1b19a00.chunk.js.map",
+    "runtime-main.js": "/react-CalendarApp/static/js/runtime-main.c0351d9d.js",
+    "runtime-main.js.map": "/react-CalendarApp/static/js/runtime-main.c0351d9d.js.map",
+    "static/css/2.72cc4989.chunk.css": "/react-CalendarApp/static/css/2.72cc4989.chunk.css",
+    "static/js/2.ae264a5b.chunk.js": "/react-CalendarApp/static/js/2.ae264a5b.chunk.js",
+    "static/js/2.ae264a5b.chunk.js.map": "/react-CalendarApp/static/js/2.ae264a5b.chunk.js.map",
+    "index.html": "/react-CalendarApp/index.html",
+    "static/css/2.72cc4989.chunk.css.map": "/react-CalendarApp/static/css/2.72cc4989.chunk.css.map",
+    "static/css/main.27c5fd10.chunk.css.map": "/react-CalendarApp/static/css/main.27c5fd10.chunk.css.map",
+    "static/js/2.ae264a5b.chunk.js.LICENSE.txt": "/react-CalendarApp/static/js/2.ae264a5b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c0351d9d.js",
+    "static/css/2.72cc4989.chunk.css",
+    "static/js/2.ae264a5b.chunk.js",
+    "static/css/main.27c5fd10.chunk.css",
+    "static/js/main.e1b19a00.chunk.js"
+  ]
+}

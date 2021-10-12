@@ -1,6 +1,9 @@
-import Swal from "sweetalert2";
-import { fetchConToken, fetchSinToken } from "../helpers/fetch"
-import { types } from "../types/types";
+import Swal from 'sweetalert2';
+
+import { fetchConToken, fetchSinToken } from '../helpers/fetch';
+import { types } from '../types/types';
+import { formClearValues } from './form';
+import { eventClearActiveEvent, eventLogout } from './events';
 
 
 export const startLogin = ( email, password ) => {
@@ -75,6 +78,8 @@ export const startLogout = () => {
     return ( dispatch ) => {
         localStorage.clear();
 
+        dispatch( eventLogout() );
+        dispatch( formClearValues() );
         dispatch( logout() );
     }
 }

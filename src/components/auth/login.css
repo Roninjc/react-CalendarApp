@@ -29,6 +29,10 @@
     padding: 10%;
 }
 
+.form-control:focus {
+    background-color: #ffffffc2 !important;
+}
+
 .center {
     display: flex;
     justify-content: center;

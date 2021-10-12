@@ -69,7 +69,7 @@ export const LoginScreen = () => {
                                 onChange={ handleLoginInputChanges }
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="form-group center">
                             <input 
                                 type="submit"
                                 className="btnSubmit"
@@ -124,7 +124,7 @@ export const LoginScreen = () => {
                             />
                         </div>
 
-                        <div className="form-group">
+                        <div className="form-group center">
                             <input 
                                 type="submit" 
                                 className="btnSubmit" 

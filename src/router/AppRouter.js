@@ -12,6 +12,8 @@ import { CalendarScreen } from '../components/calendar/CalendarScreen';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 
+import '../loader.css';
+
 export const AppRouter = () => {
 
     const dispatch = useDispatch();
@@ -24,7 +26,16 @@ export const AppRouter = () => {
     }, [dispatch])
 
     if ( checking ) {
-        return (<h5> Loading...</h5>);
+        // return (<h5> Loading...</h5>);
+        return (
+            <div className="lontainer">
+                <div className="loader">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        );
         // TODO: cambiar por un componente de loading
     }
 
